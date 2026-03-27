@@ -42,7 +42,7 @@ pipeline {
        stage('deploy app on remote server'){
               steps{
                  sh '''
-                 ssh ubbuntu@3.110.216.250 << 'EOF'
+                 ssh ubuntu@3.110.216.250 << 'EOF'
                  docker stop webapp || true
                  docker rm webapp || true
                  docker pull shalinidocker12/webapp:v1 
