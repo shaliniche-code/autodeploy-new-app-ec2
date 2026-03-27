@@ -54,7 +54,8 @@ echo "Pulling latest image..."
 docker pull shalinidocker12/webapp:v1
 
 echo "Running container..."
-
+docker stop webapp || true
+docker rm webapp || true
 docker run -d --name webapp -p 80:3000 shalinidocker12/webapp:v1
 
 EOF
