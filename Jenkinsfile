@@ -9,6 +9,13 @@ pipeline {
                    url: 'https://github.com/shaliniche-code/autodeploy-new-app-ec2.git'               
         }
         }
+          stage('build image') {
+              steps {
+                  sh 'docker build -t webapp .'
+                }
+}
+
+
           stage('docker hub login permission to push the image'){
                 steps {
                      withCredentials(
