@@ -39,16 +39,18 @@ pipeline {
                        '''            
 }
 }
-       stage('deploy app on remote server'){
+       stage('deploy app on remote server') {
               steps{
-                 sh '''
-                 ssh ubuntu@3.110.216.250 << 'EOF'
-                 docker stop webapp || true
-                 docker rm webapp || true
-                 docker pull shalinidocker12/webapp:v1 
-                 docker run -itd --name newwebapp -p 80:3000 shalinidocker12/webapp:v1 
-                 EOF 
-                 '''
+                    sh '''
+                    ssh ubuntu@3.110.216.250 << 'EOF'
+                    
+                    docker stop webapp || true
+                    docker rm webapp || true
+                    docker pull shalinidocker12/webapp:v1 
+                    docker run -itd --name newwebapp -p 80:3000 shalinidocker12/webapp:v1 
+                    
+                    EOF 
+                    '''
 }
 }
 }
