@@ -47,7 +47,7 @@ pipeline {
                     docker stop webapp || true
                     docker rm webapp || true
                     docker pull shalinidocker12/webapp:v1 
-                    docker run -itd --name newwebapp -p 80:3000 shalinidocker12/webapp:v1 
+                    docker run -itd --name webapp -p 80:3000 shalinidocker12/webapp:v1 
                     
                     EOF 
                     '''
