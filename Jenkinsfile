@@ -42,7 +42,7 @@ pipeline {
        stage('deploy app on remote server') {
     steps{
         sh '''
-ssh -o StrictHostKeyChecking=no ubuntu@13.234.120.12 << 'EOF'
+ssh -o StrictHostKeyChecking=no ubuntu@3.110.130.113 << 'EOF'
 
 echo "Cleaning up old containers using port 80..."
 
