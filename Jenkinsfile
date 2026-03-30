@@ -5,7 +5,7 @@ pipeline {
               steps {
           
                    git branch: 'main', 
-                   credentialsId: 'latest-github',
+                   credentialsId: 'github-creds',
                    url: 'https://github.com/shaliniche-code/autodeploy-new-app-ec2.git'               
         }
         }
